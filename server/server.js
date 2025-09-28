@@ -6,6 +6,13 @@ const cors = require('cors');
 
 
 require('dotenv').config();
+
+// Import the router we created in jobRoutes.js
+// The './' is important because it specifies that we are requiring a local file,
+// not a package from node_modules.
+const jobRoutes = require('./routes/jobRoutes');
+
+
 // 2. Initialize Express Application
 // We call the express() function to create a new Express application instance.
 // The 'app' object is the heart of our server, used to configure routes, middleware, and more.
@@ -46,10 +53,16 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-
+// Mount the job routes.
+// This tells our Express app to use the jobRoutes router for any request
+// that starts with the path '/api/jobs'.
+// For example, a GET request to /api/jobs will be handled by the GET '/'
+// route defined inside jobRoutes.js.
+app.use('/api/jobs', jobRoutes);
 
 
 // console.log('Adzuna App ID:', process.env.ADZUNA_APP_ID);
+
 // 6. Start the Server
 // The app.listen() method binds the server to the specified port and starts listening for incoming connections.
 // The second argument is a callback function that gets executed once the server is successfully running.
