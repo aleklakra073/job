@@ -1,0 +1,67 @@
+
+
+.job-card {
+  /* Basic box model styles */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+
+  /* Subtle shadow for a "lifting" effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* Flexbox for layout: aligns content and button on the same line */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Smooth transitions for hover effects */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhance the shadow and lift the card slightly on hover for interactivity */
+.job-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.job-card-content {
+  /* Allows this section to take up available space */
+  flex-grow: 1;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.job-company,
+.job-location {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.job-card-actions {
+  /* Adds some space between the text and the button */
+  margin-left: 16px;
+}
+
+.view-job-button {
+  /* Styling for our call-to-action button */
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none; /* Removes the default underline from the anchor tag */
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.view-job-button:hover {
+  background-color: #0056b3;
+}
